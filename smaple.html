@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Cars Dealr App</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script>
+
+        var app1 = angular.module('app1', []);
+        app1.controller('ctrl1', function($scope){
+
+        {
+          $scope.first =1;
+          $scope.second =1;
+        }
+        $scope.updateValue = function ()
+        {
+          $scope.calculation = $scope.first + '+' +  $scope.second + "="  +(+$scope )
+        };
+      });
+
+
+
+
+      var countryApp = angular.module('countryApp', []);
+      countryApp.controller('CountryCtrl', ['$scope', '$http', function (scope, http){
+        http.get('countries.json').success(function(data) {
+          scope.countries = data;
+        });
+      }]);
+    </script>
+  </head>
+  <body>
+
+    <h1>Select Your Car</h1>
+    Car  Name:<input ng-model="name" type="text"/>
+    The car you want is {{name}}
+  </body>
+</html>
